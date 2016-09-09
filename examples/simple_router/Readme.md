@@ -7,5 +7,8 @@ Before this step change the path for the default arguments to give json and the 
 cd mininet
 sudo python ./1sw_demo.py
 
-(in a different terminal, going back one step)
+(In a different terminal, going back one step)
 ./send_cmd.sh
+
+Then try to ping using
+mininet> h1 ping h2
