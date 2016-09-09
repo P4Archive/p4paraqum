@@ -1,0 +1,10 @@
+#!/bin/bash
+source env.sh
+COMPILER=$P4C_BM_PATH/p4c_bm/__main__.py
+if [ -f "simple_router.json" ]
+then
+    echo "simple_router.json exist, remove it"
+    rm simple_router.json
+fi
+
+$COMPILER --json simple_router.json p4src/simple_router.p4
