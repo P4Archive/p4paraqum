@@ -1,0 +1,8 @@
+table_set_default dmac broadcast
+table_set_default mcast_src_pruning _nop
+table_add mcast_src_pruning _drop 5 =>
+table_add dmac forward 00:04:00:00:00:00 => 1
+table_add dmac forward 00:04:00:00:00:01 => 2
+table_add dmac forward 00:04:00:00:00:02 => 3
+table_add dmac forward 00:04:00:00:00:03 => 4
+table_add dmac forward ff:ff:ff:ff:ff:ff => 1
