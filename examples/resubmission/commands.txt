@@ -1,0 +1,16 @@
+table_set_default dmac broadcast
+table_set_default mcast_src_pruning _nop
+table_set_default _resubmit_table _nop
+table_add mcast_src_pruning _drop 5 =>
+table_add dmac forward 00:04:00:00:00:00 0 => 1
+table_add dmac forward 00:04:00:00:00:01 0 => 2
+table_add dmac forward 00:04:00:00:00:02 0 => 3
+table_add dmac forward 00:04:00:00:00:03 0 => 4
+table_add dmac forward ff:ff:ff:ff:ff:ff 0 => 1
+table_add dmac forward ff:ff:ff:ff:ff:ff 1 => 2
+table_add dmac forward ff:ff:ff:ff:ff:ff 2 => 3
+table_add dmac forward ff:ff:ff:ff:ff:ff 3 => 4
+table_add _resubmit_table _resubmission 0 =>
+table_add _resubmit_table _resubmission 1 =>
+table_add _resubmit_table _resubmission 2 =>
+table_add _resubmit_table _resubmission 3 =>

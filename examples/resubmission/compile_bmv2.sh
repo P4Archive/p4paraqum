@@ -1,0 +1,10 @@
+#!/bin/bash
+source env.sh
+COMPILER=$P4C_BM_PATH/p4c_bm/__main__.py
+if [ -f "test.json" ]
+then
+    echo "test.json exist, remove it"
+    rm test.json
+fi
+
+$COMPILER --json test.json p4src/test.p4
