@@ -1,0 +1,1 @@
+sudo python mininet/l2_demo.py --behavioral-exe /home/san/p4/behavioral-model/targets/l2_switch/l2_switch --num-hosts 4 --json /home/san/p4/p4paraqum/examples/multicast/multicast.json
